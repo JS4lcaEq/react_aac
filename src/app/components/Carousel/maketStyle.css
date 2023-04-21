@@ -1,0 +1,22 @@
+.carousel-maket-component {
+background-color: antiquewhite;
+overflow: hidden;
+}
+
+.carousel-maket-box{
+    background-color: aqua;
+    height: 50px;
+    margin-left: 50vw;
+}
+
+.carousel-maket-line{
+    background-color: black;
+    margin-left: -400px;
+    width: 8000px;
+    display: flex;
+}
+.carousel-maket-item{
+    background-color: cadetblue;
+    margin: 3px;
+    width: 94px;
+}

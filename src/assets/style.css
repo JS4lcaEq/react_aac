@@ -1,0 +1,53 @@
+@font-face {
+    font-family: Manrope; /* Гарнитура шрифта */
+    src: url(assets/xn7gYHE41ni1AdIRggexSg.woff2); /* Путь к файлу со шрифтом */
+   }
+
+html, body {
+    border: 0;
+    margin: 0;
+    background-color: #222;
+    color: #fff;
+    font-family: Manrope, Arial, Helvetica, sans-serif;
+    height: 101%;
+}
+article, aside, details, figcaption, figure, footer,header,
+hgroup, menu, nav, section { 
+    display: block; 
+}
+header {
+    height: 100px;
+    padding: 0 70px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+header img {
+    /* height: 60px; */
+    width: 300px;
+}
+header ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+header ul li {
+    margin: 0 10px;
+    padding: 0 20px;
+    height: 50px;
+    /* width: 120px; */
+    border-bottom: 2px #D22346 solid;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+header div span {
+    display: inline-block;
+    width: 100px;
+    height: 37px;
+    border: 1px solid #fff;
+    line-height: 37px;
+    text-align: center;
+}

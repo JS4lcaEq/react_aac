@@ -1,0 +1,15 @@
+html, body, div.root {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: Manrope;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+  url('./assets/xn7gYHE41ni1AdIRggexSg.woff2') format('woff2')
+}
