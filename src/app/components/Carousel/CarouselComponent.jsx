@@ -1,85 +1,76 @@
 import './style.css'
 import CarouselItem from './CarouselItem'
-import { useState } from 'react'
-export default (props) => {
+import { useState, useEffect } from 'react'
 
-    const count = props.data.length
-
-    function sort(start) {
-        const ret = []
-        for (let i = 0; i < count; ++i) {
-            let newI = i + start
-            if (newI >= count) {
-                newI = newI - count
-            }
-            ret.push(props.data[newI])
-        }
-        return ret
+function sort(start, count, props) {
+    const ret = []
+    for (let i = 0; i < count; ++i) {
+        let newI = i + start
+        if (newI >= count) newI = newI - count
+        ret.push(props.data[newI])
     }
+    return ret
+}
 
+export default (props) => {
+    const duration = 0.5
     const w = 370
-    const [bussy, setBussy] = useState(false)
-    const [step, setStep] = useState(0)
-    const [list, setList] = useState(sort(step))
+
+    let isBuzzy = false
+    let count = props.data ? props.data.length : 0;
 
     const start = { marginLeft: "-" + w * 4 + "px" }
-    const left = { marginLeft: "-" + w * 5 + "px", transitionProperty: "margin-left", transitionDuration: "0.5s" }
-    const right = { marginLeft: "-" + w * 3 + "px", transitionProperty: "margin-left", transitionDuration: "0.5s" }
+    const left = { marginLeft: "-" + w * 5 + "px", transitionProperty: "margin-left", transitionDuration: duration + "s" }
+    const right = { marginLeft: "-" + w * 3 + "px", transitionProperty: "margin-left", transitionDuration: duration + "s" }
 
+    const [step, setStep] = useState(0)
+    const [list, setList] = useState(sort(step, count, props))
     const [style, setStyle] = useState(start)
 
     function onLeft() {
-        if (!bussy) {
-            setBussy(true)
+        if (!isBuzzy) {
+            isBuzzy = true
             setStyle(left)
             setTimeout(() => {
-                reset()
-                setList(sort(stepIncrement()))
-                setBussy(false)
-            }, 590);
+                setStyle(start)
+                setList(sort(stepIncrement(), count, props))
+                isBuzzy = false
+            }, duration * 1000);
         }
     }
 
     function onRight() {
-        if (!bussy) {
-            setBussy(true)
+        if (!isBuzzy) {
+            isBuzzy = true
             setStyle(right)
             setTimeout(() => {
-                reset()
-                setList(sort(stepDecrement()))
-                setBussy(false)
-            }, 590);
+                setStyle(start)
+                setList(sort(stepDecrement(), count, props))
+                isBuzzy = false
+            }, duration * 1000);
         }
-
     }
 
     function stepIncrement() {
         let ret = 0
-        if (step >= count - 1) {
-            ret = 0
-        } else {
-            ret = step + 1
-        }
+        if (step >= count - 1) { ret = 0 } else { ret = step + 1 }
         setStep(ret)
         return ret
     }
 
     function stepDecrement() {
         let ret = 0
-        if (step <= 0) {
-            ret = count - 1
-        } else {
-            ret = step - 1
-        }
+        if (step <= 0) { ret = count - 1 } else { ret = step - 1 }
         setStep(ret)
         return ret
     }
 
-    function reset() {
-        setStyle(start)
-    }
+    const r = list ? list.map(i => <CarouselItem key={i.head} head={i.head} text={i.text} url={i.url} />) : null;
 
-    const r = list.map(i => <CarouselItem  key={i.head} head={i.head} text={i.text} url={i.url} />)
+    useEffect(() => {
+        console.log("carousel-component useEffect props.data", props.data)
+        setList(sort(step, count, props))
+    }, [props.data]);
 
     return (
         <div className="carousel-component-v3">

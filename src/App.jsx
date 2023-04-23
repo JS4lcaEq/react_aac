@@ -19,11 +19,13 @@ function App() {
       </header>
       
       <h1>App</h1>
-      <Link to="/carousel">carousel</Link> | 
-      <Link to="/carouselmaket">carousel maket</Link> | 
-      <Link to="page">page</Link> | 
-      <Link to="/">root</Link> | 
-      <Link to="slice">slice</Link>
+      <Link to="/carousel">carousel</Link> &nbsp; 
+      <Link to="/carouselmaket">carousel maket</Link> &nbsp; 
+      <Link to="page">page</Link> &nbsp;  
+      <Link to="/">root</Link> &nbsp;  
+      <Link to="slice">slice</Link> &nbsp; 
+      <Link to="test">test</Link> &nbsp; 
+      <Link to="carousel-view">Carousel</Link>
       <div>
         <hr />
         <Outlet />

@@ -6,6 +6,10 @@ import Carousel from './Views/Carousel'
 import CarouselMaket from './Views/CarouselMaket/CouselMaketView'
 import SliceView from './Views/SliceView'
 
+import TestView from './Views/TestView'
+
+import CarouselView from "./Views/CarouselView"
+
 export default createBrowserRouter([
     {
       path: "/",
@@ -31,6 +35,14 @@ export default createBrowserRouter([
           path: "slice",
           element: <SliceView />,
         },
+        {
+          path: "test",
+          element: <TestView />
+        },
+        {
+          path: "carousel-view",
+          element: <CarouselView />
+        }
       ],
     }
   ]);
