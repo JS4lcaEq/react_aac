@@ -1,4 +1,4 @@
-import MaketComponent from '../App/components/Carousel/MaketComponent.jsx'
+import MaketComponent from "./../app/components/Carousel/MaketComponent" //'../App/components/Carousel/MaketComponent.jsx'
 
 export default () => {
     return (

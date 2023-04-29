@@ -3,7 +3,7 @@ import { createBrowserRouter } from "react-router-dom"
 import App from './App'
 import Page from './Views/Page'
 import Carousel from './Views/Carousel'
-import CarouselMaket from './Views/CouselMaketView'
+import CarouselMaket from './Views/CarouselMaketView'
 import SliceView from './Views/SliceView'
 
 import TestView from './Views/TestView'
