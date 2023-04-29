@@ -75,18 +75,6 @@ export default (props) => {
         setList(sort(step, count, props))
     }, [props.data]);
 
-    useEffect(() => {
-        console.log("carousel-component useEffect q", q, " buzzy", buzzy)
-        if (q > 0) {
-            setBuzzy(true)
-            const interval = setInterval(() => {
-                setQ(q => q - 1);
-                setBuzzy(false)
-            }, 1000);
-            return () => clearInterval(interval);
-        }
-    }, [q]);
-
     return (
         <div className="carousel-component-v3">
             <div className='carousel-left-manual' onClick={onLeft}></div>
