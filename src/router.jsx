@@ -9,6 +9,7 @@ import SliceView from './Views/SliceView'
 import TestView from './Views/TestView'
 
 import CarouselView from "./Views/CarouselView"
+import BigCarouselView from "./Views/BigCarouselView"
 
 export default createBrowserRouter([
     {
@@ -42,6 +43,10 @@ export default createBrowserRouter([
         {
           path: "carousel-view",
           element: <CarouselView />
+        },
+        {
+          path: "big-carousel-view",
+          element: <BigCarouselView />
         }
       ],
     }

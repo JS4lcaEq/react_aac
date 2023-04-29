@@ -17,7 +17,7 @@ export default (props) => {
     const w = 370
 
     let isBuzzy = false
-    let count = props.data ? props.data.length : 0;
+    let count = props.data ? props.data.length : 0
 
     const start = { marginLeft: "-" + w * 4 + "px" }
     const left = { marginLeft: "-" + w * 5 + "px", transitionProperty: "margin-left", transitionDuration: duration + "s" }
@@ -26,6 +26,8 @@ export default (props) => {
     const [step, setStep] = useState(0)
     const [list, setList] = useState(sort(step, count, props))
     const [style, setStyle] = useState(start)
+    const [q, setQ] = useState(0)
+    const [buzzy, setBuzzy] = useState(false)
 
     function onLeft() {
         if (!isBuzzy) {
@@ -36,8 +38,9 @@ export default (props) => {
                 setList(sort(stepIncrement(), count, props))
                 isBuzzy = false
             }, duration * 1000);
-        }
+        }        
     }
+
 
     function onRight() {
         if (!isBuzzy) {
@@ -71,6 +74,18 @@ export default (props) => {
         console.log("carousel-component useEffect props.data", props.data)
         setList(sort(step, count, props))
     }, [props.data]);
+
+    useEffect(() => {
+        console.log("carousel-component useEffect q", q, " buzzy", buzzy)
+        if (q > 0) {
+            setBuzzy(true)
+            const interval = setInterval(() => {
+                setQ(q => q - 1);
+                setBuzzy(false)
+            }, 1000);
+            return () => clearInterval(interval);
+        }
+    }, [q]);
 
     return (
         <div className="carousel-component-v3">

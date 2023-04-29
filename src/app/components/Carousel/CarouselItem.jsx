@@ -21,7 +21,7 @@ export default (props) => {
 
     return (
         <div className="carousel-item-v3" style={style} onClick={onClick}>
-            {/* carousel-item {props.index} */}
+       
             <div className="carousel-v3-text" style={styleText}>
                 {h}
                 {p}

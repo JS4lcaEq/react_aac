@@ -30,10 +30,12 @@
     height: 352px;
     width: 100px;
     background-color: rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
 .carousel-right-manual{
     right: 0;
+    
 }
 
 .carousel-v3-debug{
@@ -51,6 +53,7 @@
     transition-property: margin-top;
     transition-duration: 0.8s;
     height: 200px;
+    cursor: pointer;
 }
 
 .carousel-v3-text h2{

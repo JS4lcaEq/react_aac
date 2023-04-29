@@ -9,7 +9,7 @@
     z-index: -1;
 }
 
-.App header {
+.app header {
     height: 98px;
     padding: 0 70px;
     display: flex;
@@ -75,11 +75,7 @@ header a {
 .carousel-item-text p {
     font-size: 12px;
 }
-.debug {
-    background-color: #000;
-    position: absolute;
-    opacity: 0.1;
-}
+
 
 .manual {
     position: absolute;
@@ -88,6 +84,10 @@ header a {
     width: 100px;
     height: 100px;
     margin-top: 50px;
+}
+
+.app .main-menu a{
+margin: 0 20px;
 }
 
 a {

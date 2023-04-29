@@ -1,10 +1,15 @@
 import './App.css'
 import { Outlet, Link } from "react-router-dom";
 import logoAAC from './assets/AAC_Logo.svg'
-function App() {
-
+import { useState, useEffect } from 'react'
+let i = 0
+function App(props) {
+  useEffect(() => {
+    i++
+    console.log("App useEffect", i, props.empty)
+  },[props.empty])
   return (
-    <div className="App">
+    <div className="app">
       <div className='original'>original</div>
       <header>
         <img src={logoAAC} />
@@ -17,21 +22,24 @@ function App() {
           EN
         </div>
       </header>
-      
+
       <h1>App</h1>
-      <Link to="/carousel">carousel</Link> &nbsp; 
-      <Link to="/carouselmaket">carousel maket</Link> &nbsp; 
-      <Link to="page">page</Link> &nbsp;  
-      <Link to="/">root</Link> &nbsp;  
-      <Link to="slice">slice</Link> &nbsp; 
-      <Link to="test">test</Link> &nbsp; 
-      <Link to="carousel-view">Carousel</Link>
+      <div className='main-menu'>
+        <Link to="/carousel">carousel</Link>
+        <Link to="/carouselmaket">carousel maket</Link>
+        <Link to="page">page</Link>
+        <Link to="/">root</Link>
+        <Link to="slice">slice</Link>
+        <Link to="test">test</Link>
+        <Link to="carousel-view">Carousel</Link>
+        <Link to="big-carousel-view">Big Carousel</Link>
+      </div>
+
       <div>
         <hr />
         <Outlet />
         <hr />
       </div>
-
 
     </div>
   )
