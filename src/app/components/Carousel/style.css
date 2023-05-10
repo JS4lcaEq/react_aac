@@ -1,8 +1,7 @@
 .carousel-component-v3 {
-    /* background-color: #333; */
     height: 400px;
     overflow: hidden;
-    /* margin-left: 50vw; */
+
 }
 
 .carousel-v3-box{
@@ -13,24 +12,27 @@
 .carousel-line-v3{
     display: flex;
     width: 8000px;
-
 }
 
 .carousel-item-v3{
     width: 350px;
     height: 350px;
-    /* background-size: contain; */
     margin: 0 10px;
     border-bottom: solid 2px #D22346;
     overflow: hidden;
 }
 
+
+
 .carousel-left-manual, .carousel-right-manual{
     position: absolute;
     height: 352px;
     width: 100px;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.7);
     cursor: pointer;
+    line-height: 352px;
+    text-align: center;
+    font-size: 46px;
 }
 
 .carousel-right-manual{
@@ -40,10 +42,12 @@
 
 .carousel-v3-debug{
     position: absolute;
-    width: 300px;
-    height: 50px;
-    margin-top: -100px;
-    background-color: rgba(33, 32, 85, 0.9);
+    width: 700px;
+    height: 40px;
+    margin-top: -90px;
+    margin-left: 200px;
+    padding: 5px;
+    background-color: rgba(33, 32, 85, 0.5);
     display: none;
 }
 
