@@ -42,7 +42,6 @@
 
 .carousel-right-manual{
     right: 0;
-    
 }
 
 .carousel-v3-debug{
@@ -57,7 +56,6 @@
 }
 
 .carousel-v3-text{
-    
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10px;
     transition-property: margin-top;
