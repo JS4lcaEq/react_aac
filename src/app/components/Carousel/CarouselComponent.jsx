@@ -111,8 +111,8 @@ export default (props) => {
 
     return (
         <div className="carousel-component-v3">
-            <div className='carousel-left-manual' onClick={onLeft} style={manuaWidth}><ArrowBackIosNewIcon sx={{ fontSize: 40 }} /></div>
-            <div className='carousel-right-manual' onClick={onRight} style={manuaWidth}><ArrowForwardIosIcon sx={{ fontSize: 40 }} /></div>
+            <div className='carousel-left-manual' onClick={onLeft} style={manuaWidth}><ArrowBackIosNewIcon sx={{ fontSize: 50 }} /></div>
+            <div className='carousel-right-manual' onClick={onRight} style={manuaWidth}><ArrowForwardIosIcon sx={{ fontSize: 50 }} /></div>
             <div className='carousel-v3-debug'>count:{count} step:{step} width:{width}, height:{height} n:{numberOfVisibleElements} isOdd:{isOdd} m: {more} widthStyle: {JSON.stringify(widthStyle)}</div>
             <div className='carousel-v3-box'>
                 <div className='carousel-line-v3' style={style}>
