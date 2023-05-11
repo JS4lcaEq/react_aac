@@ -1,7 +1,5 @@
 .carousel-component-v3 {
-    height: 400px;
     overflow: hidden;
-
 }
 
 .carousel-v3-box{
@@ -22,7 +20,9 @@
     overflow: hidden;
 }
 
-
+.carousel-left-manual:hover, .carousel-right-manual:hover{
+    color: #D22346;
+}
 
 .carousel-left-manual, .carousel-right-manual{
     position: absolute;

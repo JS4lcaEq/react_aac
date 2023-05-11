@@ -25,15 +25,13 @@ function useWindowSize() {
             const more = w - n * 370
             const isOdd = n % 2 == 0
             let ws = 0
-            if (isOdd) {
-                ws =  more / 2 + 370 / 2 
-            } else {
-                ws = more / 2 
-            }
+            
+            if (isOdd) ws =  more / 2 + 370 / 2 
+            else ws = more / 2 
+            
             if(ws < 50) ws = ws + 370
-            if(n < 2){
-                ws = 50
-            }
+            if(n < 2) ws = 50
+
             const widthStyle = { width: ws + "px" }
             setSize([w, h, n, more, isOdd, widthStyle]);
         }

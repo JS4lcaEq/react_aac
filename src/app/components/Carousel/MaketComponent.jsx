@@ -15,8 +15,9 @@ export default () => {
                     <div className='carousel-maket-item'>item 7</div>
                     <div className='carousel-maket-item'>item 8</div>
                 </div>
-                
+                /carousel-maket-box
             </div>
+            /carousel-maket-component
         </div>
     )
 }
