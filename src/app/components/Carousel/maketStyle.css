@@ -1,11 +1,13 @@
 .carousel-maket-component {
 background-color: #ccc;
 overflow: hidden;
+width: 50%;
+margin: auto;
 }
 
 .carousel-maket-box{
     background-color: #777;
-    margin-left: 50vw;
+    margin-left: 50%;
 }
 
 .carousel-maket-line{
