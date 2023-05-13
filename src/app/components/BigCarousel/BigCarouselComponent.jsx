@@ -1,79 +1,51 @@
 import './BigCarouselComponent.css'
 import { useState, useEffect } from 'react'
-let i = 0
-let n = 0
-let k = 0
-let isCurrentUp = true
-let currentIndex = 1
-let interval
-const test = 0
+
 export default (props) => {
-    const [test, setTest] = useState("ini")
-    // const [currentIndex, setCurrentIndex] = useState(1)
-    let m = 0
-    const [styleDown, setStyleDown] = useState({ backgroundImage: 'url("/src/assets/c1/1.jpg")', opacity: "1" })
-    const [styleUp, setStyleUp] = useState({ backgroundImage: 'url("/src/assets/c1/2.jpg")', opacity: "0" })
 
-    useState(()=>{k++; console.log("big-carousel-component useState", k)})
-
-    function getStyleHidden(style) { return { backgroundImage: style.backgroundImage, opacity: "0" } }
-    function getStyleVisible(style) { return { backgroundImage: style.backgroundImage, opacity: "1" } }
-    function getStyleImg(style, img) { return { backgroundImage: 'url("/src/assets/c1/' + img + '")', opacity: style.opacity } }
-
-    function showImg(img) {
-        if (isCurrentUp) {
-            setStyleUp(getStyleVisible(getStyleImg(styleUp, img)))
-            setStyleDown(getStyleHidden(styleDown))
-
-        } else {
-            setStyleDown(getStyleVisible(getStyleImg(styleDown, img)))
-            setStyleUp(getStyleHidden(styleUp))
-
-        }
-        // setIsCurrentUp(!isCurrentUp)
-        isCurrentUp = !isCurrentUp
-    }
-
-    function imageIteration() {
-        // setCurrentIndex(currentIndex < props.list.length - 1 ? currentIndex + 1 : 0)
-        currentIndex = currentIndex < props.list.length - 1 ? currentIndex + 1 : 0
-        return props.list[currentIndex]
-    }
-
-    function go() {
-        n++
-        console.log(n)
-        showImg(imageIteration())
-    }
-
-    function start () { 
-        // interval = setInterval(go, 2000) 
-        m++
-        const mm = m
-        console.log("start m", m, " mm", mm)
-        
-    }
+    const [step, setStep] = useState([
+        0, 
+        true, 
+        { backgroundImage: 'url("' + props.preffix + props.list[0] + '")', opacity: "1"}, 
+        { backgroundImage: 'url("' + props.preffix + props.list[1] + '")', opacity: "0"}
+    ])
 
     useEffect(() => {
-        i++
-        m++
-        if(m == 1){
-            interval = setInterval(go, 2000) 
-        }
-        console.log("big-carousel-component useEffect", i, " m", m)
+        const index = setInterval(() => {
+            setStep(val => {
+                let index = val[0] + 1
+                if(index >= props.list.length) index = 0
+                const odd = !val[1]
+                let up = val[2]
+                let down = val[3]
+                if(odd){
+                    up = { backgroundImage: 'url("' + props.preffix + props.list[index] + '")', opacity: "1"}
+                    down = {backgroundImage : val[3].backgroundImage, opacity: "0"}
+                }else{
+                    down = { backgroundImage: 'url("' + props.preffix + props.list[index] + '")', opacity: "1"}
+                    up = {backgroundImage : val[2].backgroundImage, opacity: "0"}
+                }
+                return [index, odd, up, down]
+            })
+        }, 3000)
+        return () => clearInterval(index)
     }, [])
 
     return (
         <div className="big-carousel-component">
             <div className='debug'>
-                <h2>Debug</h2>
+                <h2>Debug </h2>
                 <p>props:{JSON.stringify(props)}</p>
-                <p>styleUp: {JSON.stringify(styleUp)}</p>
-                <p>{test}</p>
-                <button onClick={start}>go</button>
+                <p>step = {JSON.stringify(step)}</p>
             </div>
-            <div className='down' style={styleDown}>down</div>
-            <div className='up' style={styleUp}>up</div>
+            
+            <div className='down' style={step[3]}>down</div>
+            <div className='up' style={step[2]}>up</div>
+            <div className='shadow'>
+                <h2>Ultimate Automotive Analytics</h2>
+                <h3>Be aware. Be ahead.</h3>
+            </div>
+            
         </div>
     )
 }

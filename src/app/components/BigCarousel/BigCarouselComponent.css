@@ -11,6 +11,7 @@
     height: 200px;
     z-index: 1000;
     padding: 10px;
+    display: none;
 }
 
 .big-carousel-component .down, .big-carousel-component .up {
@@ -19,5 +20,24 @@
     position: absolute;
     transition-property: opacity;
     transition-duration: 1.1s;
+}
+
+.big-carousel-component .shadow {
+    z-index: 10;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.big-carousel-component .shadow h2 {
+    font-size: 48px;
+    font-weight: 700;  
+    margin-top: 180px;  
+}
+.big-carousel-component .shadow h3 {
+    font-size: 28px;
+    font-weight: 400;  
+    margin-top: 40px;  
 }
 

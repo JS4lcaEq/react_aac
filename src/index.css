@@ -1,15 +1,38 @@
-html, body, div.root {
+html {
+   background-color: #000; 
+}
+html, body, div.root, button {
   margin: 0;
   padding: 0;
-  background-color: #000;
   color: #fff;
   font-family: Manrope;
+  height: 100%;
+}
+
+body {
+  height: 101%;
 }
 
 @font-face {
-  font-family: 'Manrope';
+  font-family: "Manrope";
   font-style: normal;
   font-weight: 400;
+  src: local(''),
+  url('./assets/xn7gYHE41ni1AdIRggexSg.woff2') format('woff2')
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+  url('./assets/xn7gYHE41ni1AdIRggexSg.woff2') format('woff2')
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
   src: local(''),
   url('./assets/xn7gYHE41ni1AdIRggexSg.woff2') format('woff2')
 }

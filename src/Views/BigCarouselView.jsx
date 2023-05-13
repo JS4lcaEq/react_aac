@@ -6,6 +6,7 @@ export default () => {
         <div className="big-carousel-view">
             big-carousel-view
             <BigCarousel list={imagesList} preffix={preffix} />
+            /big-carousel-view
         </div>
     )
 }

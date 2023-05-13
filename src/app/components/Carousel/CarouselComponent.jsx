@@ -26,8 +26,8 @@ function useWindowSize() {
             const isOdd = n % 2 == 0
             let ws = 0
             
-            if (isOdd) ws =  more / 2 + 370 / 2 
-            else ws = more / 2 
+            if (isOdd) ws =  more / 2 + 370 / 2 - 9
+            else ws = more / 2 - 9
             
             if(ws < 50) ws = ws + 370
             if(n < 2) ws = 50
@@ -42,6 +42,7 @@ function useWindowSize() {
     return size;
 }
 
+
 export default (props) => {
 
     const [width, height, numberOfVisibleElements, more, isOdd, widthStyle] = useWindowSize();
@@ -51,9 +52,9 @@ export default (props) => {
     let isBuzzy = false
     let count = props.data ? props.data.length : 0
 
-    const start = { marginLeft: "-" + (w * 4.5 + 3) + "px" }
-    const left = { marginLeft: "-" + (w * 5.5 + 3) + "px", transitionProperty: "margin-left", transitionDuration: duration + "s" }
-    const right = { marginLeft: "-" + (w * 3.5 + 3) + "px", transitionProperty: "margin-left", transitionDuration: duration + "s" }
+    const start = { marginLeft: "-" + (w * 4.5 + 8) + "px" }
+    const left = { marginLeft: "-" + (w * 5.5 + 8) + "px", transitionProperty: "margin-left", transitionDuration: duration + "s" }
+    const right = { marginLeft: "-" + (w * 3.5 + 8) + "px", transitionProperty: "margin-left", transitionDuration: duration + "s" }
 
     const manuaWidth = widthStyle
 
