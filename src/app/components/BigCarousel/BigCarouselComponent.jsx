@@ -44,6 +44,9 @@ export default (props) => {
             <div className='shadow'>
                 <h2>Ultimate Automotive Analytics</h2>
                 <h3>Be aware. Be ahead.</h3>
+                <label><input type="text" placeholder="Corporate Email address" /><button>Request a Demo</button></label>
+                <div>Your submission was successful.</div>
+                <p>Leave us your email to request additional information and demonstrational access</p>
             </div>
             
         </div>

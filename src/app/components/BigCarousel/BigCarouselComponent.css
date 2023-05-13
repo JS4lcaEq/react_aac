@@ -33,11 +33,42 @@
 .big-carousel-component .shadow h2 {
     font-size: 48px;
     font-weight: 700;  
-    margin-top: 180px;  
+    margin-top: 180px; 
+    margin-bottom: 0; 
 }
 .big-carousel-component .shadow h3 {
     font-size: 28px;
     font-weight: 400;  
-    margin-top: 40px;  
+    margin-top: 20px;  
+    font-size: 24px;
+    font-weight: 400; 
 }
+.big-carousel-component .shadow label{
+    width: 60%;
+    /* background-color: bisque; */
+    display: flex;
+    align-items: stretch;
+    margin: auto;
+    height: 70px;
 
+}
+.big-carousel-component .shadow label button {
+    /* height: 40px; */
+    display: block;
+    padding: 0 50px;
+    background-color: #D22346;
+    border: 1px solid #D22346;
+    font-size: 24px;
+    font-weight: 700;
+}
+.big-carousel-component .shadow label input {
+    display: block;
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    background-color: #000;
+    margin-right: 10px;
+    color: #fff;
+    padding: 0 25px;
+    font-size: 16px;
+
+}
